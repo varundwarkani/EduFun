@@ -7,7 +7,6 @@
     tools:context=".UI.MainActivity"
     android:background="@color/app_color">
 
-
     <View
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -19,14 +18,27 @@
         app:layout_constraintTop_toTopOf="@id/topGuideline"
         app:layout_constraintVertical_bias="0.0" />
 
+    <ImageView
+        android:id="@+id/image_student"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="@id/endGuideline2"
+        app:layout_constraintStart_toStartOf="@+id/startGuideline2"
+        app:layout_constraintTop_toTopOf="@id/topGuideline1"
+        app:layout_constraintBottom_toTopOf="@id/topGuideline4"
+        android:src="@mipmap/ic_launcher"/>
+
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btSave"
+        android:id="@+id/btLogin"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="198dp"
-        android:layout_height="66dp"
-        android:text="Student Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="@string/login"
+        android:layout_marginTop="10dp"
         android:textColor="@color/app_color"
-        android:textSize="10sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@id/endGuideline2"
         app:layout_constraintStart_toStartOf="@+id/startGuideline2"
         app:layout_constraintTop_toBottomOf="@+id/topGuideline4"
@@ -102,15 +114,5 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.61" />
-
-    <ImageView
-        android:id="@+id/image_student"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintEnd_toEndOf="@id/endGuideline2"
-        app:layout_constraintStart_toStartOf="@+id/startGuideline2"
-        app:layout_constraintTop_toTopOf="@id/topGuideline1"
-        app:layout_constraintBottom_toTopOf="@id/topGuideline4"
-        android:src="@mipmap/ic_launcher"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.16" />
+        app:layout_constraintGuide_percent="0.15" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/topGuideline1"
@@ -105,72 +105,304 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.94" />
 
-    <TextView
-        android:id="@+id/text_name"
-        android:layout_width="0sp"
-        android:layout_height="0sp"
-        android:text="NAME"
-        android:textColor="#4b0082"
-        android:textAlignment="center"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@id/topGuideline2"
-        app:layout_constraintEnd_toStartOf="@+id/left6"
-        app:layout_constraintStart_toStartOf="@id/left5"
-        app:layout_constraintTop_toBottomOf="@id/topGuideline1" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/llTop"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:background="#33CFCFCF"
+        android:weightSum="10"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0sp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/topGuideline4"
-        app:layout_constraintEnd_toStartOf="@+id/left3"
-        app:layout_constraintStart_toStartOf="@+id/left4"
-        app:layout_constraintTop_toBottomOf="@id/topGuideline3"
-        android:src="@mipmap/ic_launcher" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_marginEnd="10dp"
+            android:layout_width="0dp"
+            android:paddingTop="5dp"
+            android:layout_height="60dp"
+            android:layout_weight="3"
+            android:id="@+id/imageView" />
 
-    <TextView
-        android:id="@+id/text_Points"
-        android:layout_width="0sp"
-        android:layout_height="0sp"
-        android:textColor="#FFD700"
-        android:text="Points"
-        android:textAlignment="center"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@id/topGuideline6"
-        app:layout_constraintEnd_toStartOf="@+id/left3"
-        app:layout_constraintStart_toStartOf="@id/left4"
-        app:layout_constraintTop_toBottomOf="@id/topGuideline5" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:orientation="vertical"
+            android:paddingStart="5dp"
+            android:gravity="center"
+            android:paddingEnd="5dp">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvName"
+                android:textSize="25sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textAlignment="textStart"
+                android:text="Varun Dwarkani"/>
 
-    <TextView
-        android:id="@+id/text_400"
-        android:layout_width="190dp"
-        android:layout_height="110dp"
-        android:text="400"
-        android:textAlignment="center"
-        android:textColor="#4b0082"
-        android:textSize="45sp"
-        app:layout_constraintBottom_toTopOf="@id/topGuideline7"
-        app:layout_constraintEnd_toStartOf="@+id/left3"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="@id/left4"
-        app:layout_constraintTop_toBottomOf="@id/topGuideline6"
-        app:layout_constraintVertical_bias="0.433" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvEmail"
+                android:textSize="14sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textAlignment="textStart"
+                android:text="varundwarkani10@gmail.com"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btSave"
-        style="@style/Widget.MaterialComponents.Button"
-        android:backgroundTint="#FFD700"
-        android:layout_width="198dp"
-        android:layout_height="66dp"
-        android:text="Redeem"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@id/topGuideline8"
-        app:layout_constraintEnd_toStartOf="@+id/left3"
-        app:layout_constraintStart_toStartOf="@id/left4"
-        app:layout_constraintTop_toBottomOf="@id/topGuideline7">
+        </LinearLayout>
 
-    </com.google.android.material.button.MaterialButton>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/profile_border_5"
+        android:paddingBottom="5dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="1dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="@+id/topGuideline2"
+        app:layout_constraintStart_toStartOf="@+id/left5"
+        app:layout_constraintEnd_toEndOf="@+id/left6">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="Wallet"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:weightSum="10">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:padding="10dp"
+                android:src="@drawable/profile_coins"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:id="@+id/tvCoins"
+                android:text="0"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="25sp"/>
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:id="@+id/btRedeem"
+                android:layout_weight="4"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="10dp"
+                android:text="Redeem"
+                app:cornerRadius="30dp"
+                android:textColor="@color/app_color"
+                app:rippleColor="@color/app_color"
+                app:strokeColor="@color/app_color"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/profile_border_5"
+        android:paddingBottom="20dp"
+        android:elevation="1dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@+id/left5"
+        app:layout_constraintEnd_toEndOf="@+id/left6"
+        app:layout_constraintTop_toBottomOf="@+id/ll1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvLevelName"
+            android:text="Intermediate Level"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvNextLevelData"
+            android:text="2500 XP for Pro Level"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"/>
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center">
+
+            <com.dwarsoftgames.edufun.CircleCountDownView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:id="@+id/countDownView"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/tvLevelXp"
+                android:gravity="center"
+                android:text="7500 XP"
+                android:textColor="@color/black"
+                android:textSize="15sp"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/profile_border_5"
+        android:paddingBottom="20dp"
+        android:elevation="1dp"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/left5"
+        app:layout_constraintEnd_toEndOf="@+id/left6"
+        app:layout_constraintTop_toBottomOf="@+id/ll2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="Statistics"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Number of ODs secured "
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+
+            <TextView
+                android:id="@+id/tvOD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:layout_marginEnd="10dp"
+                android:text="5"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/app_color"
+                android:textSize="22sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Marks secured "
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+
+            <TextView
+                android:id="@+id/tvMarks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:layout_marginEnd="10dp"
+                android:text="25"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/app_color"
+                android:textSize="22sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Attendance secured "
+                android:textColor="@color/black"
+                android:textSize="17sp"/>
+
+            <TextView
+                android:id="@+id/tvAttendance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:layout_marginEnd="10dp"
+                android:text="8%"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/app_color"
+                android:textSize="22sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

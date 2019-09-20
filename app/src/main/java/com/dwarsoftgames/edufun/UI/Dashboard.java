@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,20 +20,50 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.dwarsoftgames.edufun.CircleCountDownView;
 import com.dwarsoftgames.edufun.Models.MenuModel;
 import com.dwarsoftgames.edufun.R;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.snackbar.Snackbar;
+import com.squareup.picasso.Picasso;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
+import static com.dwarsoftgames.edufun.UI.MainActivity.SHAREDPREF;
+
 public class Dashboard extends AppCompatActivity {
+
+    private String PROFILE_DETAILS = "https://edufun.dwarsoft.com/api/edufun/Profile?UserID=";
 
     private DrawerLayout drawer;
     private List<MenuModel> listDataHeader;
     private ActionBarDrawerToggle toggle;
     private Toolbar toolbar;
+
+    private TextView tvName;
+    private TextView tvEmail;
+    private CircleImageView imageView;
+    private SharedPreferences sharedPreferences;
+    private CircleCountDownView countDownView;
+
+    private TextView tvCoins;
+    private MaterialButton btRedeem;
+    private TextView tvOD, tvMarks, tvAttendance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +71,47 @@ public class Dashboard extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
 
         setViews();
+        initData();
         setSupportActionBar(toolbar);
         setDrawer();
+        setOnClicks();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        RequestQueue requestQueue = Volley.newRequestQueue(Dashboard.this);
+        requestQueue.add(setData());
     }
 
     private void setViews() {
         toolbar = findViewById(R.id.toolbar);
+        imageView = findViewById(R.id.imageView);
+        countDownView = findViewById(R.id.countDownView);
+
+        tvName = findViewById(R.id.tvName);
+        tvEmail = findViewById(R.id.tvEmail);
+        tvCoins = findViewById(R.id.tvCoins);
+        btRedeem = findViewById(R.id.btRedeem);
+        tvOD = findViewById(R.id.tvOD);
+        tvMarks = findViewById(R.id.tvMarks);
+        tvAttendance = findViewById(R.id.tvAttendance);
+    }
+
+    private void setOnClicks() {
+        btRedeem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this,RedeemActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void initData() {
+        sharedPreferences = getSharedPreferences(SHAREDPREF,MODE_PRIVATE);
+        Picasso.get().load(sharedPreferences.getString("profilePic","")).placeholder(R.mipmap.ic_launcher).error(R.mipmap.ic_launcher).into(imageView);
+        countDownView.setProgress(7500,10000);
     }
 
     private void setDrawer() {
@@ -214,4 +280,52 @@ public class Dashboard extends AppCompatActivity {
             }
         }
     }
+
+    private JsonObjectRequest setData() {
+
+        int uid = sharedPreferences.getInt("userId",0);
+        String url = PROFILE_DETAILS + uid ;
+
+        return new JsonObjectRequest(Request.Method.GET,url,null,
+                new Response.Listener<JSONObject>(){
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        parseData(response);
+                    }
+                }, new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),"Server Error", Snackbar.LENGTH_LONG);
+                snackbar.show();
+            }
+        });
+    }
+
+    private void parseData(JSONObject jsonObject) {
+        try {
+            if (jsonObject.getBoolean("isSuccess")) {
+                String emailID = jsonObject.getString("emailID");
+                String userName = jsonObject.getString("userName");
+                String rollNo = jsonObject.getString("rollNo");
+                int coins = jsonObject.getInt("coins");
+                int OD = jsonObject.getInt("od");
+                int Marks = jsonObject.getInt("marks");
+                int Attendance = jsonObject.getInt("attendance");
+                String att = Attendance + "%";
+
+                sharedPreferences.edit().putInt("coins",coins).apply();
+
+                tvName.setText(userName);
+                tvEmail.setText(emailID);
+                tvCoins.setText(String.valueOf(coins));
+                tvOD.setText(String.valueOf(OD));
+                tvMarks.setText(String.valueOf(Marks));
+                tvAttendance.setText(att);
+
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
