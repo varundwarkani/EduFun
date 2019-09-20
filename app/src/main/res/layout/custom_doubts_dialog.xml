@@ -74,19 +74,41 @@
 
         </LinearLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btPublish"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="2"
-            android:text="Publish"
-            android:layout_gravity="center"
-            android:textColor="@color/colorPrimary"
-            app:rippleColor="@color/colorPrimary"
-            android:textSize="20sp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cancel"
+                android:layout_gravity="center"
+                android:textColor="@color/colorPrimary"
+                app:rippleColor="@color/colorPrimary"
+                android:textSize="20sp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btPublish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Publish"
+                android:layout_gravity="center"
+                android:textColor="@color/colorPrimary"
+                app:rippleColor="@color/colorPrimary"
+                android:textSize="20sp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 

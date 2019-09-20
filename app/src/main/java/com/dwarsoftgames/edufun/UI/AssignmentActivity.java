@@ -174,8 +174,7 @@ public class AssignmentActivity extends AppCompatActivity {
 
             holder.tvTitle.setText(assignmentID_adapter.get(holder.getAdapterPosition()));
             holder.tvDescription.setText(description);
-            holder.tvStart.setText(assignmentStart_adapter.get(holder.getAdapterPosition()));
-            holder.tvEnd.setText(assignmentEnd_adapter.get(holder.getAdapterPosition()));
+            holder.tvStart.setText("Last Date - " + assignmentEnd_adapter.get(holder.getAdapterPosition()));
 
         }
 
@@ -189,14 +188,12 @@ public class AssignmentActivity extends AppCompatActivity {
             final TextView tvTitle;
             final TextView tvDescription;
             final TextView tvStart;
-            final TextView tvEnd;
 
             ViewHolder(View itemView) {
                 super(itemView);
                 tvTitle = itemView.findViewById(R.id.tvTitle);
                 tvDescription = itemView.findViewById(R.id.tvDescription);
                 tvStart = itemView.findViewById(R.id.tvStart);
-                tvEnd = itemView.findViewById(R.id.tvEnd);
             }
         }
     }

@@ -19,6 +19,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,6 +53,8 @@ public class DoubtsActivity extends AppCompatActivity {
     private RecyclerView rvForum;
     private MaterialButton btDoubts;
 
+    private ImageView ivBack;
+
     private RequestQueue requestQueue;
     private SharedPreferences sharedPreferences;
 
@@ -83,6 +86,7 @@ public class DoubtsActivity extends AppCompatActivity {
     private void setViews() {
         rvForum = findViewById(R.id.rvForum);
         btDoubts = findViewById(R.id.btDoubts);
+        ivBack = findViewById(R.id.ivBack);
     }
 
     private void initData() {
@@ -97,6 +101,13 @@ public class DoubtsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showRaiseDoubtsDialog();
+            }
+        });
+
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
@@ -211,7 +222,7 @@ public class DoubtsActivity extends AppCompatActivity {
                     subjectName.add(getSubjectName(subjectID));
                     question.add(jsonObject1.getString("question"));
                     if (ans.length() > 2) {
-                        answer.add(ans);
+                        answer.add("Answer : " + ans);
                     } else {
                         answer.add("Not yet answered");
                     }
@@ -302,10 +313,12 @@ public class DoubtsActivity extends AppCompatActivity {
         ArrayAdapter<String> spinnerAdapter_doubts;
         final MaterialSpinner spSubjects;
         final EditText etDoubts;
+        MaterialButton btCancel;
         MaterialButton btPublish;
 
         spSubjects = view.findViewById(R.id.spSubjects);
         etDoubts = view.findViewById(R.id.etDoubts);
+        btCancel = view.findViewById(R.id.btCancel);
         btPublish = view.findViewById(R.id.btPublish);
 
         spSubjects.setHint("Select Subject");
@@ -321,6 +334,13 @@ public class DoubtsActivity extends AppCompatActivity {
         spinnerAdapter_doubts.add("DBMS");
 
         spSubjects.setAdapter(spinnerAdapter_doubts);
+
+        btCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                closeAlert();
+            }
+        });
 
         btPublish.setOnClickListener(new View.OnClickListener() {
             @Override

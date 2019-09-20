@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="@id/topGuideline"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/image_student"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -26,7 +26,7 @@
         app:layout_constraintStart_toStartOf="@+id/startGuideline2"
         app:layout_constraintTop_toTopOf="@id/topGuideline1"
         app:layout_constraintBottom_toTopOf="@id/topGuideline4"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@drawable/login_image"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btLogin"

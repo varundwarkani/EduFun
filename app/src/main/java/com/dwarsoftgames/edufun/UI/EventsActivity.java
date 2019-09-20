@@ -115,7 +115,7 @@ public class EventsActivity extends AppCompatActivity {
         try {
             if (jsonObject.getBoolean("isSuccess")) {
                 JSONArray jsonArray = jsonObject.getJSONArray("events");
-                for (int i = 0; i < jsonObject.length(); i++) {
+                for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject jsonObject1 = jsonArray.getJSONObject(i);
                     eventName.add(jsonObject1.getString("eventName"));
                     eventDescription.add(jsonObject1.getString("eventDescription"));
@@ -161,7 +161,7 @@ public class EventsActivity extends AppCompatActivity {
 
             holder.tvTitle.setText(eventName_adapter.get(holder.getAdapterPosition()));
             holder.tvDescription.setText(description);
-            holder.tvStart.setText(eventDate_adapter.get(holder.getAdapterPosition()));
+            holder.tvStart.setText("Event Date - " + eventDate_adapter.get(holder.getAdapterPosition()));
 
         }
 
