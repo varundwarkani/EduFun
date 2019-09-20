@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -94,14 +95,24 @@ public class Dashboard extends AppCompatActivity {
         listDataHeader = new ArrayList<>();
 
         MenuModel model1 = new MenuModel();
-        model1.setTitle("Menu 1");
+        model1.setTitle("Quiz");
         model1.setImage(R.drawable.ic_launcher_foreground);
         listDataHeader.add(model1);
 
         MenuModel model2 = new MenuModel();
-        model2.setTitle("Menu 2");
+        model2.setTitle("Assignments");
         model2.setImage(R.drawable.ic_launcher_foreground);
         listDataHeader.add(model2);
+
+        MenuModel model3 = new MenuModel();
+        model3.setTitle("Events");
+        model3.setImage(R.drawable.ic_launcher_foreground);
+        listDataHeader.add(model3);
+
+        MenuModel model4 = new MenuModel();
+        model4.setTitle("Doubts");
+        model4.setImage(R.drawable.ic_launcher_foreground);
+        listDataHeader.add(model4);
     }
 
     class DrawerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -131,9 +142,36 @@ public class Dashboard extends AppCompatActivity {
                 itemViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-//                        switchActivity(holder.getAdapterPosition());
+                        switchActivity(holder.getAdapterPosition());
                     }
                 });
+            }
+        }
+
+        private void switchActivity(int position) {
+            switch (position) {
+                case 1 :
+                    Intent intent=new Intent(Dashboard.this,QuizActivity.class);
+                    startActivity(intent);
+                break;
+
+                case 2 :
+                    Intent intent1=new Intent(Dashboard.this,AssignmentActivity.class);
+                    startActivity(intent1);
+                    break;
+
+                case 3 :
+                    Intent intent2=new Intent(Dashboard.this,EventsActivity.class);
+                    startActivity(intent2);
+                    break;
+
+                case 4 :
+                    Intent intent3=new Intent(Dashboard.this,DoubtsActivity.class);
+                    startActivity(intent3);
+                    break;
+
+
+
             }
         }
 

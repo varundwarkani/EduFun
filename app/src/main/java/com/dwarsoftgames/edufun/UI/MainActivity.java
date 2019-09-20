@@ -11,7 +11,7 @@ import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    private MaterialButton btSave;
+    private MaterialButton btLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +23,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setViews() {
-        btSave = findViewById(R.id.btSave);
+        btLogin = findViewById(R.id.btSave);
     }
 
     private void setOnClicks() {
-        btSave.setOnClickListener(new View.OnClickListener() {
+        btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,Dashboard.class);

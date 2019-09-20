@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UI.Dashboard"></activity>
+        <activity android:name=".UI.DoubtsActivity"></activity>
+        <activity android:name=".UI.EventsActivity" />
+        <activity android:name=".UI.AssignmentActivity" />
+        <activity android:name=".UI.QuizActivity" />
+        <activity android:name=".UI.Dashboard" />
         <activity android:name=".UI.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

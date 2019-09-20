@@ -7,59 +7,38 @@
     tools:context=".UI.MainActivity"
     android:background="@color/app_color">
 
+
     <View
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/rounded_edge"
+        app:layout_constraintBottom_toBottomOf="@id/bottomGuideline"
+        app:layout_constraintEnd_toEndOf="@id/endGuideline"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/startGuideline"
-        app:layout_constraintEnd_toEndOf="@id/endGuideline"
         app:layout_constraintTop_toTopOf="@id/topGuideline"
-        app:layout_constraintBottom_toBottomOf="@id/bottomGuideline"/>
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="What Is Your Name?"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:textColor="@color/app_color"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="@+id/startGuideline"
-        app:layout_constraintEnd_toEndOf="@id/endGuideline"
-        app:layout_constraintTop_toTopOf="@id/topGuideline"/>
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/etName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:maxLines="1"
-        android:inputType="textPersonName"
-        android:hint="Username"
-        android:textColor="@color/app_color"
-        app:layout_constraintStart_toStartOf="@+id/startGuideline2"
-        app:layout_constraintEnd_toEndOf="@id/endGuideline2"
-        app:layout_constraintTop_toBottomOf="@+id/topGuideline4" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Save"
-        android:textColor="@color/app_color"
-        app:rippleColor="@color/app_color"
-        android:textSize="20sp"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        app:layout_constraintStart_toStartOf="@id/startGuideline"
-        app:layout_constraintEnd_toEndOf="@id/endGuideline"
-        app:layout_constraintTop_toTopOf="@id/topGuideline3"/>
+        android:layout_width="198dp"
+        android:layout_height="66dp"
+        android:text="Student Login"
+        android:textColor="@color/app_color"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@id/endGuideline2"
+        app:layout_constraintStart_toStartOf="@+id/startGuideline2"
+        app:layout_constraintTop_toBottomOf="@+id/topGuideline4"
+        app:rippleColor="@color/app_color"
+        tools:layout_editor_absoluteY="443dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/startGuideline"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent=".1" />
+        app:layout_constraintGuide_percent="0.10218978" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/endGuideline"
@@ -73,42 +52,42 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".3" />
+        app:layout_constraintGuide_percent="0.28864568" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/bottomGuideline"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".57" />
+        app:layout_constraintGuide_percent="0.7118194" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/startGuideline1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent=".3" />
+        app:layout_constraintGuide_percent="0.28" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/endGuideline1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent=".7" />
+        app:layout_constraintGuide_percent="0.73" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/topGuideline1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".35" />
+        app:layout_constraintGuide_percent="0.3515732" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/startGuideline2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent=".2" />
+        app:layout_constraintGuide_percent="0.20194647" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/endGuideline2"
@@ -118,24 +97,20 @@
         app:layout_constraintGuide_percent=".8" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/topGuideline2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".6" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/topGuideline3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".5" />
-
-    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/topGuideline4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".4" />
+        app:layout_constraintGuide_percent="0.61" />
+
+    <ImageView
+        android:id="@+id/image_student"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="@id/endGuideline2"
+        app:layout_constraintStart_toStartOf="@+id/startGuideline2"
+        app:layout_constraintTop_toTopOf="@id/topGuideline1"
+        app:layout_constraintBottom_toTopOf="@id/topGuideline4"
+        android:src="@mipmap/ic_launcher"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
