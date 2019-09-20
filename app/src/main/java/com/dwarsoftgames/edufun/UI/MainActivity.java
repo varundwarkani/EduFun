@@ -281,6 +281,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         params.put("rollNo", rollNo);
         params.put("deptID", String.valueOf(departmentCode));
 
+        sharedPreferences.edit().putInt("DeptID",departmentCode).apply();
+
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,
                 AUTH_USERS, new JSONObject(params),
                 new Response.Listener<JSONObject>() {
