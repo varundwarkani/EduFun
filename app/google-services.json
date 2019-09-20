@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "290199708929",
+    "firebase_url": "https://edufun-fc85e.firebaseio.com",
+    "project_id": "edufun-fc85e",
+    "storage_bucket": "edufun-fc85e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290199708929:android:a4d4f1b2b631e87be6e700",
+        "android_client_info": {
+          "package_name": "com.dwarsoftgames.edufun"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290199708929-60pikn289rvumq5ecs2iam7iik5rjnau.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dwarsoftgames.edufun",
+            "certificate_hash": "93fb60d715cc40c50eb13a94431657f6f4f6b373"
+          }
+        },
+        {
+          "client_id": "290199708929-2k7448qcqcs143igc47nk4g2ur14i2t3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZSWFUphvqyyb68POa7omedNMVs6QmAIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290199708929-2k7448qcqcs143igc47nk4g2ur14i2t3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
