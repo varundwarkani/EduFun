@@ -99,18 +99,28 @@
             app:layout_constraintTop_toBottomOf="@id/topGuideline3" />
 
         <TextView
-            android:id="@+id/qstime"
-            android:layout_width="349dp"
+            android:id="@+id/astime"
+            android:layout_width="150dp"
             android:layout_height="55dp"
             android:text="STime"
             android:textAlignment="center"
             android:textSize="25sp"
             app:layout_constraintBottom_toTopOf="@id/topGuideline6"
-            app:layout_constraintEnd_toStartOf="@+id/left2"
+            app:layout_constraintEnd_toStartOf="@+id/left3"
             app:layout_constraintStart_toStartOf="@id/left1"
             app:layout_constraintTop_toBottomOf="@id/topGuideline5" />
 
-
+        <TextView
+        android:id="@+id/aetime"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:text="ETime"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@id/topGuideline6"
+        app:layout_constraintEnd_toStartOf="@+id/left2"
+        app:layout_constraintStart_toStartOf="@id/left3"
+        app:layout_constraintTop_toBottomOf="@id/topGuideline5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
